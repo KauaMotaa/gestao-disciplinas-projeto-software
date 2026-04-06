@@ -18,3 +18,7 @@ def listar():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# Versão final para entrega da atividade
+# Testando a esteira do GitHub Actions com 75% de cobertura
