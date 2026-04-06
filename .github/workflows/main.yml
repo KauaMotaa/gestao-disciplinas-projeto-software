@@ -1,0 +1,22 @@
+name: CI Disciplinas
+
+on: [pull_request]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install flask behave coverage
+
+      - name: Rodar Testes e Cobertura
+        run: |
+          coverage run -m behave
+          coverage report --fail-under=75
