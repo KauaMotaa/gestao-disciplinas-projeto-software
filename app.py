@@ -6,7 +6,6 @@ disciplinas = []
 @app.route('/disciplinas', methods=['POST'])
 def criar():
     dados = request.get_json()
-    # Validação simples para os campos obrigatórios
     if not all(k in dados for k in ("titulo", "vagas", "eh_verao")):
         return jsonify({"erro": "Dados incompletos"}), 400
     disciplinas.append(dados)
