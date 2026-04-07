@@ -6,3 +6,13 @@ Funcionalidade: Gerenciar Disciplinas
     Dado que os dados da disciplina são válidos
     Quando eu solicitar o salvamento
     Então a disciplina deve estar na lista do sistema
+
+Cenário: Atualizar uma disciplina existente
+    Dado que existe uma disciplina cadastrada com id 1
+    Quando eu envio uma requisição PUT para "/disciplinas/1" com novos dados
+    Então o status code deve ser 200
+
+  Cenário: Excluir uma disciplina
+    Dado que desejo excluir a disciplina de id 1
+    Quando eu envio uma requisição DELETE para "/disciplinas/1"
+    Então o status code deve ser 200
